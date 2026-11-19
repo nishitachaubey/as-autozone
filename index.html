@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AS Autozone</title>
+<meta name="description" content="AS Autozone Commercial Vehicles. Tata, Mahindra, Maruti and Eicher vehicles for work and family. Browse the range and send an enquiry.">
+<meta name="theme-color" content="#C00000">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<!-- Shared paint used by the fallback vehicle drawings -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E31B1B"/><stop offset="1" stop-color="#8F0000"/></linearGradient>
+    <linearGradient id="gCargo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D9D9DE"/></linearGradient>
+    <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF1F7"/><stop offset="1" stop-color="#8FA3B5"/></linearGradient>
+  </defs>
+</svg>
+
+<header class="top" id="topbar">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="AS Autozone Commercial Vehicles, home">
+      <img src="logo.png" alt="AS Autozone Commercial Vehicles" onerror="this.onerror=null;this.parentNode.classList.add('nologo')">
+      <span class="logo-txt">AS <b>Autozone</b></span>
+    </a>
+    <nav class="dnav" aria-label="Main">
+      <a href="#catalog">Vehicles</a>
+      <a href="#brands">Brands</a>
+      <a href="#why">Why us</a>
+      <a href="#guide">Guide</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="grow"></span>
+    <button class="btn red small" type="button" data-enquire="">Enquire now</button>
+    <button class="menu-btn" type="button" id="menu-open" aria-controls="menu" aria-expanded="false" aria-label="Open menu"><span class="burger" aria-hidden="true"><i></i><i></i><i></i></span></button>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</header>
+
+<div class="menu" id="menu" inert aria-hidden="true">
+  <button class="icon-btn menu-close" type="button" id="menu-close" aria-label="Close menu">
+    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+  </button>
+  <div class="wrap menu-in">
+    <nav aria-label="Menu">
+      <a href="#catalog">Vehicles</a>
+      <a href="#brands">Brands</a>
+      <a href="#finder">Help me choose</a>
+      <a href="#why">Why AS Autozone</a>
+      <a href="#guide">Buying guide</a>
+      <a href="#faq">Questions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-side">
+      <img src="logo-white.png" alt="" class="menu-logo" onerror="this.style.display='none'">
+      <p>Tata, Mahindra, Maruti and Eicher commercial vehicles. Tell us what you need and we call you back.</p>
+      <div><button class="btn white" type="button" data-enquire="">Send an enquiry</button></div>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-roledescription="carousel" aria-label="Featured vehicles">
+    <div class="slides" id="slides"></div>
+    <div class="hero-ctl">
+      <div class="wrap">
+        <div class="inds" id="inds"></div>
+        <div class="ctl-btns">
+          <button class="icon-btn" type="button" id="h-prev" aria-label="Previous slide"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3L5 9l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="icon-btn" type="button" id="h-play" aria-label="Pause slideshow"><svg id="ic-pause" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M5 3v12M13 3v12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg><svg id="ic-play" width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" hidden><path d="M5 3l10 6-10 6z" fill="currentColor"/></svg></button>
+          <button class="icon-btn" type="button" id="h-next" aria-label="Next slide"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M7 3l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" aria-label="At a glance">
+    <div class="wrap" id="stats"></div>
+  </section>
+
+  <!-- MOVING RANGE REEL -->
+  <section class="reel-sec" aria-label="Our range">
+    <div class="reel" id="reel"><div class="reel-track" id="reel-track"></div></div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="sec" id="brands">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><span class="kicker">Shop by brand</span><h2>Four trusted names</h2></div><p>Choose a brand to see its line-up with us.</p></div>
+      <div class="brands" id="brand-panels"></div>
+    </div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="sec tint" id="catalog">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><span class="kicker">The catalog</span><h2>Our vehicles</h2></div><p>Open a vehicle for details, tick Compare on up to three, or enquire straight away.</p></div>
+      <div class="filters reveal">
+        <div class="frow"><span class="flabel">Brand</span><div class="seg" id="f-brand" role="group" aria-label="Filter by brand"></div></div>
+        <div class="frow"><span class="flabel">Type</span><div class="seg" id="f-cat" role="group" aria-label="Filter by type"></div></div>
+        <div class="field-inline">
+          <input class="input pill" id="f-q" type="search" placeholder="Search by name, e.g. Intra, Ace, Eeco, Pro X" aria-label="Search vehicles" autocomplete="off">
+          <select class="input pill" id="f-fuel" aria-label="Filter by fuel" style="width:auto">
+            <option value="all">Any fuel</option><option>Diesel</option><option>Petrol</option><option>CNG</option><option>Electric</option>
+          </select>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- FINDER -->
+  <section class="sec" id="finder">
+    <div class="wrap">
+      <div class="finder reveal">
+        <h2>Not sure? Help me choose</h2>
+        <p class="sub">Answer two quick questions and we will show the vehicles that fit.</p>
+        <div id="finder-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="sec tint" id="why">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><span class="kicker">Why AS Autozone</span><h2>One dealer, the whole range</h2></div><p>Commercial vehicles from four brands, with real people to help you choose.</p></div>
+      <div class="why">
+        <article class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7zM7 18.5a1.8 1.8 0 1 0 0-.01M17 18.5a1.8 1.8 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><h3>Four brands in one place</h3><p>Tata, Mahindra, Maruti and Eicher, so you can compare options without visiting several dealers.</p></article>
+        <article class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></span><h3>Help choosing</h3><p>Use Help me choose, or tell us your load, route and budget and we suggest suitable models.</p></article>
+        <article class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M5 4h14v16H5zM9 9h6M9 13h6M9 17h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>Current quote on the call</h3><p>Prices change by variant, city and offers. We share the right figure for your vehicle when we call.</p></article>
+        <article class="why-card reveal"><span class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 18v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2M9 8a3 3 0 1 0 0-.01M17 11a2.5 2.5 0 1 0 0-.01M16 14.5a3.5 3.5 0 0 1 4 3.5V18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><h3>Fleet enquiries welcome</h3><p>Buying several vehicles? Tell us how many and what for, and we plan it with you.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE -->
+  <section class="sec" id="guide">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><span class="kicker">Before you decide</span><h2>Which one suits you?</h2></div><p>A short guide to our two vehicle types.</p></div>
+      <div class="guide-grid">
+        <div class="gitem reveal"><h3>Tempos and cargo</h3><p>Small trucks and vans that carry roughly half a tonne to a tonne. Common with shops, markets and delivery fleets.</p><p class="big">Best for daily deliveries</p></div>
+        <div class="gitem reveal"><h3>Pickups</h3><p>Open-bed vehicles for loads of 1.3 tonne and above, and for rough or rural roads.</p><p class="big">Best for heavy and long-route goods</p></div>
+      </div>
+
+      <h3 class="subhead reveal">Choosing a fuel</h3>
+      <div class="fuel-grid">
+        <div class="fuel reveal"><b>Diesel</b><span>Usually preferred for heavy loads and long daily distances.</span></div>
+        <div class="fuel reveal"><b>CNG</b><span>Often cheaper to run where CNG stations are close to your route.</span></div>
+        <div class="fuel reveal"><b>Petrol</b><span>Suits lighter loads and lower daily running.</span></div>
+        <div class="fuel reveal"><b>Electric</b><span>Suits fixed city routes where you can charge each night.</span></div>
+      </div>
+
+      <h3 class="subhead reveal">How it works</h3>
+      <div class="steps">
+        <div class="step reveal"><h3>Pick a vehicle</h3><p>Browse the catalog, compare a few, or use Help me choose.</p></div>
+        <div class="step reveal"><h3>Share your details</h3><p>Fill in your name, mobile number, city and what you will use it for. It takes about a minute.</p></div>
+        <div class="step reveal"><h3>We call you back</h3><p>Our team contacts you with the current price, availability and next steps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec tint faq" id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal"><div><span class="kicker">Good to know</span><h2>Questions</h2></div></div>
+      <details class="reveal"><summary>What happens after I send my details?</summary><p>Our team gets your enquiry and calls the number you gave. We discuss the vehicle, the current price and what you need.</p></details>
+      <details class="reveal"><summary>Why are prices not shown?</summary><p>Prices change by variant, city and offers. We share a current quote when we call, so you get the right figure for your vehicle.</p></details>
+      <details class="reveal"><summary>Can I see a vehicle before buying?</summary><p>Mention it in your enquiry and we will tell you what is possible for that model.</p></details>
+      <details class="reveal"><summary>I am buying more than one vehicle. Can I enquire for a fleet?</summary><p>Yes. Choose "Fleet or multiple vehicles" as the use and write how many you need in the message box.</p></details>
+      <details class="reveal"><summary>Are the specifications on this page final?</summary><p>They are indicative. Exact variants, payload, seating and features differ, so confirm them with our team before you decide.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="box reveal">
+        <div>
+          <h2 id="contact-title">Talk to our team</h2>
+          <p>Tell us what you are looking for and we will come back to you.</p>
+          <button class="btn white" type="button" data-enquire="">Send an enquiry</button>
+        </div>
+        <dl id="contact-details"></dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="logo-white.png" alt="AS Autozone Commercial Vehicles" class="foot-logo" onerror="this.style.display='none'">
+    <div>
+      <p>Commercial vehicles from Tata, Mahindra, Maruti and Eicher.</p>
+      <p class="small">Specifications are indicative. Confirm variants, prices and availability with AS Autozone before you buy. Tata, Mahindra, Maruti Suzuki and Eicher are trademarks of their respective owners.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="fab" type="button" id="fab" data-enquire="" aria-label="Send an enquiry">
+  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Enquire</span>
+</button>
+<button class="totop" type="button" id="totop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 11l6-6 6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<div class="cmpbar" id="cmpbar" hidden>
+  <div class="wrap">
+    <div class="names" id="cmp-names"></div>
+    <button class="btn white small" type="button" id="cmp-open">Compare</button>
+    <button class="btn ghost-light small" type="button" id="cmp-clear">Clear</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="scrim" data-close></div>
+  <section class="panel" role="dialog" aria-modal="true" aria-labelledby="panel-title" tabindex="-1">
+    <div class="panel-head">
+      <h2 id="panel-title"></h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+    </div>
+    <div class="panel-body">
+      <div id="view-detail" hidden></div>
+      <div id="view-compare" hidden></div>
+      <div id="view-enquiry" hidden>
+        <form class="form" id="enq-form" action="https://formsubmit.co/asautozone01@gmail.com" method="POST" novalidate>
+          <div class="fieldset">
+            <label for="f-vehicle">Vehicle you are interested in</label>
+            <select class="input" id="f-vehicle" name="vehicle"></select>
+          </div>
+          <input type="hidden" name="_subject" value="New enquiry from AS Autozone website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+          <div class="row2">
+            <div class="fieldset"><label for="e-name">Your name</label><input class="input" id="e-name" name="name" autocomplete="name" aria-required="true"><div class="err" id="err-name" role="alert"></div></div>
+            <div class="fieldset"><label for="e-phone">Mobile number</label><input class="input" id="e-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="10-digit number" aria-required="true"><div class="err" id="err-phone" role="alert"></div></div>
+          </div>
+          <div class="row2">
+            <div class="fieldset"><label for="e-city">City or town</label><input class="input" id="e-city" name="city" autocomplete="address-level2"><div class="err" id="err-city" role="alert"></div></div>
+            <div class="fieldset"><label for="e-email">Email</label><input class="input" id="e-email" name="email" type="email" autocomplete="email" aria-required="true" placeholder="name@example.com"><div class="err" id="err-email" role="alert"></div></div>
+          </div>
+          <div class="row2">
+            <div class="fieldset"><label for="e-use">What will you use it for?</label>
+              <select class="input" id="e-use" name="use">
+                <option>Goods or business transport</option>
+                <option>Fleet or multiple vehicles</option>
+                <option>Personal use</option>
+              </select></div>
+            <div class="fieldset"><label for="e-when">When do you plan to buy?</label>
+              <select class="input" id="e-when" name="when">
+                <option>Within a week</option>
+                <option selected>This month</option>
+                <option>In 1 to 3 months</option>
+                <option>Just exploring</option>
+              </select></div>
+          </div>
+          <div class="fieldset"><label for="e-msg">Anything else we should know? <span class="opt-t">(optional)</span></label><textarea class="input" id="e-msg" name="message" placeholder="Load you carry, daily distance, budget, number of vehicles…"></textarea></div>
+          <div class="fieldset">
+            <label class="check" for="e-consent"><input type="checkbox" id="e-consent" name="consent"><span>I agree that AS Autozone may contact me about this enquiry.</span></label>
+            <div class="err" id="err-consent" role="alert"></div>
+          </div>
+          <button class="btn red" type="submit" id="e-submit">Send my details</button>
+        </form>
+      </div>
+      <div id="view-success" class="success" hidden></div>
+      <div id="view-fallback" class="fallback" hidden></div>
+    </div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
