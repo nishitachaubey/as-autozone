@@ -4,13 +4,7 @@
 
   /* ---------- Settings you can change ---------- */
   var FORMSUBMIT_EMAIL = "asautozone01@gmail.com";   /* every enquiry is emailed here */
-  var CONFIG = {
-  phone: "+91 98765 43210",
-  whatsapp: "919876543210",
-  email: "asautozone01@gmail.com",
-  address: "Shop 12, Main Road, Your City",
-  hours: "Mon–Sat, 9:00 am – 7:00 pm"
-};
+  var CONFIG = { phone: "", whatsapp: "", email: "", address: "", hours: "" };  /* shown in the contact block when filled in */
   var PHOTO_DIR = "images/";   /* put vehicle photos in this folder */
   var PHOTO_EXTS = ["jpg", "jpeg", "png", "webp"];   /* photo name = vehicle id + one of these, e.g. images/tata-intra-v30.jpg */
 
@@ -50,12 +44,12 @@
   ];
 
   var SLIDES = [
+    { vid: "eicher-pro-x", filter: { brand: "eicher" }, label: "Eicher", h: "Meet the <em>Pro X</em>", cta: "See Eicher",
+      sub: "The Eicher Pro X is available in both diesel and CNG." },
     { vid: "tata-intra-v70", filter: { cat: "pickup" }, label: "Pickups", h: "Power for <em>heavy</em> loads", cta: "See all pickups",
       sub: "Tata Intra pickups, the Mahindra Bolero Pik-Up and the Eicher Pro X for heavy loads and long routes." },
     { vid: "tata-ace-gold", filter: { cat: "tempo" }, label: "Tempos and cargo", h: "Built for <em>daily</em> deliveries", cta: "See tempos and cargo",
       sub: "Tata Ace, Maruti Super Carry and Eeco Cargo for shops, markets and delivery fleets." },
-    { vid: "eicher-pro-x", filter: { brand: "eicher" }, label: "Eicher", h: "Meet the <em>Pro X</em>", cta: "See Eicher",
-      sub: "The Eicher Pro X is available in both diesel and CNG." },
     { vid: "mahindra-bolero-pikup", filter: { brand: "mahindra" }, label: "Mahindra", h: "Built for <em>tough</em> roads", cta: "See Mahindra",
       sub: "The Mahindra Bolero Pik-Up and the Veero, which comes in both diesel and CNG." }
   ];
