@@ -4,7 +4,13 @@
 
   /* ---------- Settings you can change ---------- */
   var FORMSUBMIT_EMAIL = "asautozone01@gmail.com";   /* every enquiry is emailed here */
-  var CONFIG = { phone: "", whatsapp: "", email: "", address: "", hours: "" };  /* shown in the contact block when filled in */
+  var CONFIG = {
+  phone: "+91 98765 43210",
+  whatsapp: "919876543210",
+  email: "asautozone01@gmail.com",
+  address: "Shop 12, Main Road, Your City",
+  hours: "Mon–Sat, 9:00 am – 7:00 pm"
+};
   var PHOTO_DIR = "images/";   /* put vehicle photos in this folder */
   var PHOTO_EXTS = ["jpg", "jpeg", "png", "webp"];   /* photo name = vehicle id + one of these, e.g. images/tata-intra-v30.jpg */
 
