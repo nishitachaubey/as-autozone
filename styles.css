@@ -388,3 +388,44 @@ textarea.input { min-height: 96px; resize: vertical; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .reel-track { animation: none; overflow-x: auto; }
 }
+
+/* Phone layout: compact, swipeable sections so the page is not one long scroll */
+@media (max-width: 640px) {
+  .sec { padding-block: 34px; }
+  .sec-head { margin-bottom: 16px; gap: 8px; }
+  .sec-head h2 { font-size: 2rem; padding-bottom: 10px; }
+  .sec-head p { font-size: .95rem; }
+
+  /* swipe rows */
+  .brands, .why, .guide-grid { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; margin-inline: -16px; padding: 4px 16px 14px; scrollbar-width: none; }
+  .brands::-webkit-scrollbar, .why::-webkit-scrollbar, .guide-grid::-webkit-scrollbar, .seg::-webkit-scrollbar { display: none; }
+  .brands > *, .why > *, .guide-grid > * { flex: 0 0 78%; scroll-snap-align: start; min-width: 0; }
+  .brand { min-height: 190px; padding: 20px 18px; }
+  .why-card { padding: 18px; }
+  .why-card .ic { width: 44px; height: 44px; margin-bottom: 10px; }
+  .why-card h3 { font-size: 1.35rem; }
+
+  /* filters: one swipe line per group */
+  .filters { padding: 12px; gap: 8px; }
+  .frow { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 8px; }
+  .frow .seg { flex-wrap: nowrap; }
+  .seg button { white-space: nowrap; min-height: 36px; padding: 0 13px; flex: 0 0 auto; }
+  .flabel { min-width: 0; flex: 0 0 auto; }
+  .field-inline { flex-wrap: nowrap; }
+  .field-inline input { flex: 1 1 0; min-width: 0; }
+
+  /* catalog: two compact cards per row */
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card { border-radius: 14px; }
+  .card:hover { --ty: 0; }
+  .card .body { padding: 10px 10px 12px; gap: 6px; }
+  .card h3 { font-size: 1.3rem; line-height: 1.05; }
+  .cardtype, .cap2 { display: none; }
+  .brandchip { left: 8px; top: 8px; font-size: .62rem; padding: 3px 9px; }
+  .cmp { top: 6px; right: 6px; min-height: 28px; padding: 0 9px; font-size: .72rem; }
+  .tag2 { font-size: .7rem; padding: 1px 8px; }
+  .card .actions { gap: 6px; padding-top: 4px; }
+  .card .actions .btn { min-height: 36px; font-size: .82rem; padding: 0 6px; }
+  .count { margin-bottom: 10px; font-size: .9rem; }
+}
+@media (max-width: 640px) { .sec { overflow-x: clip; } html, body { overflow-x: clip; } }
